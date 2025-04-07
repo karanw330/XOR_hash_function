@@ -24,7 +24,7 @@ def convert_from_binary(bin_list):
     for j in reversed(bin_list):
         ascii_num += j*(2**weight)
         weight +=1
-    return chr(ascii_num)
+    return ascii_num
 
 
 characters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
@@ -58,8 +58,15 @@ for char in binary_message:
     encrypted_list.append(encrypted_letter)
 
 
-decrypted_string = ""
+encrypted_string = ""
 
 for ch in encrypted_list:
-    decrypted_string += str(convert_from_binary(ch))
-print(decrypted_string)
+    asc_ = convert_from_binary(ch)
+    if asc_ >= 0 and asc_ <= 33:
+        asc_ = 33
+    elif asc_ >= 125 and asc_ <=127:
+        asc_ = 125
+    else:
+        pass
+    encrypted_string += str(chr(asc_))
+print(encrypted_string)
