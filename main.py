@@ -63,7 +63,7 @@ encrypted_string = ""
 for ch in encrypted_list:
     asc_ = convert_from_binary(ch)
     if asc_ >= 0 and asc_ <= 33:
-        asc_ = 33
+        asc_ += 33
     elif asc_ >= 125 and asc_ <=127:
         asc_ = 125
     else:
