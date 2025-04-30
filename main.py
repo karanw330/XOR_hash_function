@@ -47,7 +47,7 @@ key = random.choice(characters)
 ascii_key = ord(key)
 binary_key = convert_to_binary(ascii_key)
 
-#-----------------------------------------------encryption process-----------------------------------------------
+#-----------------------------------------------hashing process-----------------------------------------------
 
 encrypted_list = []
 
